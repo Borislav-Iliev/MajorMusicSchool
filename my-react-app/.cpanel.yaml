@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/majodgse/public_html
+    - npm ci
+    - npm run build
+    - /bin/cp -r dist/* $DEPLOYPATH
