@@ -1,7 +1,8 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/majodgse/public_html
+    - cd /home/majodgse/repositories/MajorMusicSchool/my-react-app
     - npm ci
     - npm run build
+    - export DEPLOYPATH=/home/majodgse/public_html
     - /bin/cp -r dist/* $DEPLOYPATH
