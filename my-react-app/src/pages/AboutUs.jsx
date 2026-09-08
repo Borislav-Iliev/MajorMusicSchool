@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import heroImg from '../assets/images/MEET THE FOUNDERS.JPG'
-import contentImg from '../assets/images/AboutUsLeft.PNG'
-import team1Img from '../assets/images/IMG_2418.JPG'
+const CLOUDINARY = 'https://res.cloudinary.com/s4o4wqaq/image/upload'
+const heroImg = `${CLOUDINARY}/v1788891554/MEET_THE_FOUNDERS.jpg`
+const contentImg = `${CLOUDINARY}/v1788891549/AboutUsLeft.png`
+const team1Img = `${CLOUDINARY}/v1788891548/IMG_2418.jpg`
 
 function AboutUs() {
     return (

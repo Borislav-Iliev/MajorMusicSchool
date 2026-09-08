@@ -3,21 +3,23 @@ import { Link } from 'react-router-dom'
 import { FaGuitar, FaMicrophone, FaMusic, FaUsers } from 'react-icons/fa'
 import { GiViolin, GiGrandPiano, GiSaxophone   } from 'react-icons/gi'
 import Footer from './components/Footer'
-import flipImg from './assets/images/Flip.JPG'
-import zaraImg from './assets/images/IMG_8319.JPG'
-import card1Img from './assets/images/IMG_8311.JPG'
-import card3Img from './assets/images/IMG_8315.JPG'
-import card4Img from './assets/images/IMG_8312.JPG'
-import card5Img from './assets/images/IMG_8313.JPG'
-import card6Img from './assets/images/IMG_8314.JPG'
-import card7Img from './assets/images/IMG_8316.jpg'
-import event1Img from './assets/images/Event1.PNG'
-import event2Img from './assets/images/Event2.PNG'
-import event3Img from './assets/images/Event3.PNG'
-import heroSectionImg from './assets/images/УРОЦИ.PNG'
-import phylosophyImg from './assets/images/IMG_3172.JPG'
-import foundersHeroImg from './assets/images/MEET THE FOUNDERS.JPG'
 import './App.css'
+
+const CLOUDINARY = 'https://res.cloudinary.com/s4o4wqaq/image/upload'
+const flipImg = `${CLOUDINARY}/v1788891548/Flip.jpg`
+const zaraImg = `${CLOUDINARY}/v1788891553/IMG_8319.jpg`
+const card1Img = `${CLOUDINARY}/v1788891551/IMG_8311.jpg`
+const card3Img = `${CLOUDINARY}/v1788891553/IMG_8315.jpg`
+const card4Img = `${CLOUDINARY}/v1788891552/IMG_8312.jpg`
+const card5Img = `${CLOUDINARY}/v1788891553/IMG_8313.jpg`
+const card6Img = `${CLOUDINARY}/v1788891553/IMG_8314.jpg`
+const card7Img = `${CLOUDINARY}/v1788891553/IMG_8316.jpg`
+const event1Img = `${CLOUDINARY}/v1788891550/Event1.png`
+const event2Img = `${CLOUDINARY}/v1788891550/Event2.png`
+const event3Img = `${CLOUDINARY}/v1788891551/Event3.png`
+const phylosophyImg = `${CLOUDINARY}/v1788891550/IMG_3172.jpg`
+const foundersHeroImg = `${CLOUDINARY}/v1788891554/MEET_THE_FOUNDERS.jpg`
+const heroSectionImg = `${CLOUDINARY}/v1788892537/%D0%A3%D0%A0%D0%9E%D0%A6%D0%98.jpg`
 
 const navLink =
   'relative pb-[3px] text-[12px] uppercase tracking-[1.5px] text-[#ffdfc0] no-underline ' +

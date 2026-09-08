@@ -2,13 +2,14 @@ import { useState, useRef } from 'react'
 import { FaInstagram, FaFacebookF, FaTiktok } from 'react-icons/fa'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import team1Img from '../assets/images/IMG_8311.JPG'
-import team2Img from '../assets/images/IMG_8319.JPG'
-import team3Img from '../assets/images/IMG_8315.JPG'
-import team4Img from '../assets/images/IMG_8312.JPG'
-import team5Img from '../assets/images/IMG_8313.JPG'
-import team6Img from '../assets/images/IMG_8314.JPG'
-import team7Img from '../assets/images/IMG_8316.jpg'
+const CLOUDINARY = 'https://res.cloudinary.com/s4o4wqaq/image/upload'
+const team1Img = `${CLOUDINARY}/v1788891551/IMG_8311.jpg`
+const team2Img = `${CLOUDINARY}/v1788891553/IMG_8319.jpg`
+const team3Img = `${CLOUDINARY}/v1788891553/IMG_8315.jpg`
+const team4Img = `${CLOUDINARY}/v1788891552/IMG_8312.jpg`
+const team5Img = `${CLOUDINARY}/v1788891553/IMG_8313.jpg`
+const team6Img = `${CLOUDINARY}/v1788891553/IMG_8314.jpg`
+const team7Img = `${CLOUDINARY}/v1788891553/IMG_8316.jpg`
 
 const members = [
     {

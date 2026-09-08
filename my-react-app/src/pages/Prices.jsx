@@ -4,7 +4,7 @@ import { GiGClef } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import pricesHeroImg from '../assets/images/PricesBackground.PNG'
+const pricesHeroImg = 'https://res.cloudinary.com/s4o4wqaq/image/upload/v1788891553/PricesBackground.png'
 import prices from '../data/prices.json'
 
 const ICONS = {

@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import event1Img from '../assets/images/Event1.PNG'
-import event2Img from '../assets/images/Event2.PNG'
-import event3Img from '../assets/images/Event3.PNG'
-import eventsHeroImg from '../assets/images/AboutUsLeft.PNG'
+const CLOUDINARY = 'https://res.cloudinary.com/s4o4wqaq/image/upload'
+const event1Img = `${CLOUDINARY}/v1788891550/Event1.png`
+const event2Img = `${CLOUDINARY}/v1788891550/Event2.png`
+const event3Img = `${CLOUDINARY}/v1788891551/Event3.png`
+const eventsHeroImg = `${CLOUDINARY}/v1788891549/AboutUsLeft.png`
 
 const events = [
     {
