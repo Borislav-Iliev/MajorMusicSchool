@@ -1,0 +1,185 @@
+[
+    {
+        "id": "individual-single",
+        "icon": "music",
+        "title": "Индивидуален урок",
+        "monthlyPrice": null,
+        "lessonPrice": "20",
+        "duration": "урок",
+        "currency": "€",
+        "category": "Индивидуални",
+        "subtitle": "Единичен урок",
+        "priceNote": null,
+        "features": [
+            "Персонално внимание през целия урок",
+            "Инструмент или пеене по избор",
+            "Гъвкав график според свободното ти време",
+            "Подходящ за всички нива и възрасти"
+        ],
+        "featured": false,
+        "badge": null
+    },
+    {
+        "id": "individual-4-lessons",
+        "icon": "music",
+        "title": "Пакет от 4 урока",
+        "monthlyPrice": "80",
+        "lessonPrice": "20",
+        "duration": "урок",
+        "currency": "€",
+        "category": "Индивидуални",
+        "subtitle": "Редовни занимания с личен преподавател - един урок седмично за последователно обучение",
+        "priceNote": null,
+        "features": [
+            "4 урока месечно",
+            "Инструмент или пеене по избор",
+            "Индивидуална програма спрямо целите ти",
+            "Подходящ за всички нива и възрасти"
+        ],
+        "featured": true,
+        "badge": "Най-популярно"
+    },
+    {
+        "id": "individual-8-lessons",
+        "icon": "music",
+        "title": "Пакет от 8 урока",
+        "monthlyPrice": "160",
+        "lessonPrice": "20",
+        "duration": "8 урока",
+        "currency": "€",
+        "category": "Индивидуални",
+        "subtitle": "Два урока седмично с личен преподавател за по-интензивно обучение.",
+        "priceNote": null,
+        "features": [
+            "8 урока месечно",
+            "Инструмент или пеене по избор",
+            "По-бързо развитие на уменията",
+            "Подходящ за всички нива и възрасти"
+        ],
+        "featured": false,
+        "badge": null
+    },
+    {
+        "id": "group-vocal",
+        "icon": "music",
+        "title": "Вокална група",
+        "monthlyPrice": "50",
+        "lessonPrice": null,
+        "duration": "4 посещения на месец",
+        "currency": "€",
+        "category": "Групови",
+        "priceNote": null,
+        "features": [
+            "Развива музикалния слух",
+            "Учи на работа в екип",
+            "Изгражда увереност",
+            "Развива музикалността на няколко нива"
+        ],
+        "featured": false,
+        "badge": null
+    },
+    {
+        "id": "group-solfege",
+        "icon": "users",
+        "title": "Солфеж и музикална теория",
+        "monthlyPrice": "50",
+        "lessonPrice": null,
+        "duration": "4 посещения",
+        "currency": "€",
+        "category": "Групови",
+        "priceNote": null,
+        "features": [
+            "Основа на музикалното разбиране",
+            "Развива интонацията",
+            "Изгражда чувство за ритъм",
+            "Развива музикалната грамотност"
+        ],
+        "featured": false,
+        "badge": null
+    },
+    {
+        "id": "group-kids-program",
+        "icon": "users",
+        "title": "Програма за деца „Бъдещ музикант\"",
+        "monthlyPrice": "50",
+        "lessonPrice": null,
+        "duration": null,
+        "currency": "€",
+        "category": "Групови",
+        "priceNote": "Включва всички музикално-теоретични дейности, съобразени с възрастта на децата от 4 до 12 г.",
+        "features": [
+            "Запознава детето с основите на музиката",
+            "Обхваща всички музикално-теоретични предмети",
+            "Изгражда стабилна музикална основа",
+            "Помага на детето да открие своята посока в музиката"
+        ],
+        "featured": false,
+        "badge": null
+    },
+    {
+        "id": "studio-cover-tiktok",
+        "icon": "music",
+        "title": "Кавър за TikTok & Reels",
+        "monthlyPrice": "75",
+        "lessonPrice": null,
+        "duration": null,
+        "priceUnit": "",
+        "currency": "€",
+        "category": "Звукозаписно студио",
+        "subtitle": "Запис на куплет + припев от избрана песен, създаден специално за социалните мрежи.",
+        "priceNote": null,
+        "features": [
+            "Професионален вокален запис и обработка",
+            "Видео за TikTok, Instagram Reels и Shorts",
+            "Сесия до 120 минути",
+            "Всичко се реализира в рамките на един ден",
+            "Готов продукт до 10 работни дни"
+        ],
+        "featured": false,
+        "badge": null
+    },
+    {
+        "id": "studio-cover-full",
+        "icon": "music",
+        "title": "Цял кавър на песен",
+        "monthlyPrice": "100",
+        "lessonPrice": null,
+        "duration": null,
+        "priceUnit": "",
+        "currency": "€",
+        "category": "Звукозаписно студио",
+        "subtitle": "Пълна продукция на избрана песен — от вокалния запис до готовото аудио и видео.",
+        "priceNote": null,
+        "features": [
+            "Запис на цялата песен",
+            "Професионална вокална обработка и микс",
+            "Видео за социални мрежи или YouTube",
+            "Сесия до 160 минути",
+            "Всичко се реализира в рамките на един ден",
+            "Готов продукт до 10 работни дни"
+        ],
+        "featured": false,
+        "badge": null
+    },
+    {
+        "id": "studio-original-music",
+        "icon": "music",
+        "title": "Авторска музика",
+        "monthlyPrice": null,
+        "lessonPrice": null,
+        "duration": null,
+        "currency": "€",
+        "category": "Звукозаписно студио",
+        "subtitle": "Създаване на оригинална песен, изцяло съобразена с изпълнителя, стила и концепцията на проекта.",
+        "priceNote": "Цена по договаряне",
+        "features": [
+            "Музика",
+            "Текст",
+            "Аранжимент",
+            "Професионална музикална продукция",
+            "Пълен авторски проект"
+        ],
+        "featured": false,
+        "badge": null
+    }
+]

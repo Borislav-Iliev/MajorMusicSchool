@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-aura-bg: #f5f0eb;
+  --color-aura-light: #faf7f4;
+  --color-aura-text: #2c2c2c;
+  --color-aura-muted: #6b6158;
+  --color-aura-accent: #a68b6b;
+  --color-aura-card: #ede7e0;
+  --color-aura-hero: #c4b5a4;
+  --color-aura-p1: #b8a99a;
+  --color-aura-p2: #9aada0;
+  --color-aura-p3: #a4a0b8;
+  --color-aura-journal: #d4c8bb;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f5f0eb;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #2c2c2c;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+@keyframes slide-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-from-top {
+  from {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-from-left {
+  animation: slide-from-left 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-from-right {
+  animation: slide-from-right 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-from-top {
+  animation: slide-from-top 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
