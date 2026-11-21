@@ -1,7 +1,9 @@
-import { useState, useRef } from 'react'
+import { useRef } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { FaInstagram, FaFacebookF, FaTiktok } from 'react-icons/fa'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+
 const CLOUDINARY = 'https://res.cloudinary.com/s4o4wqaq/image/upload'
 const team1Img = `${CLOUDINARY}/v1788891551/IMG_8311.jpg`
 const team2Img = `${CLOUDINARY}/v1788891553/IMG_8319.jpg`
@@ -97,16 +99,41 @@ const members = [
     }
 ]
 
+const PAGE_SIZE = 4;
+
+// Builds a compact page list, e.g. [1, '…', 4, 5, 6, '…', 12]
+function getPageItems(current, total) {
+    if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1)
+    const items = [1]
+    const start = Math.max(2, current - 1)
+    const end = Math.min(total - 1, current + 1)
+    if (start > 2) items.push('…')
+    for (let i = start; i <= end; i++) items.push(i)
+    if (end < total - 1) items.push('…')
+    items.push(total)
+    return items
+}
+
+const navBtn = 'h-10 px-4 rounded-full border border-[#3f0008]/20 bg-white flex items-center gap-2 text-[13px] text-[#3f0008] hover:bg-[#3f0008] hover:text-[#ffdfc0] transition-all duration-200 disabled:opacity-25 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-[#3f0008]'
+
 function Team() {
-    const [page, setPage] = useState(0)
-    const pageSize = 4
-    const totalPages = Math.ceil(members.length / pageSize)
-    const currentMembers = members.slice(page * pageSize, page * pageSize + pageSize)
+    const [searchParams, setSearchParams] = useSearchParams()
+    const totalPages = Math.ceil(members.length / PAGE_SIZE)
+    const requested = parseInt(searchParams.get('page'), 10)
+    const page = Number.isFinite(requested) ? Math.min(Math.max(requested, 1), totalPages) : 1
+    const firstIndex = (page - 1) * PAGE_SIZE
+    const currentMembers = members.slice(firstIndex, firstIndex + PAGE_SIZE)
     const cardsSectionRef = useRef(null)
 
-    const goToPage = (nextPage) => {
-        setPage(nextPage)
-        cardsSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    const goToPage = (next) => {
+        if (next < 1 || next > totalPages || next === page) return
+        setSearchParams(next === 1 ? {} : { page: String(next) })
+        // Scroll only on an explicit page change, never on load
+        const el = cardsSectionRef.current
+        if (el) {
+            const top = el.getBoundingClientRect().top + window.scrollY - 80
+            window.scrollTo({ top, behavior: 'smooth' })
+        }
     }
 
     return (
@@ -126,7 +153,7 @@ function Team() {
 
             {/* ══ TEAM CARDS ══ */}
             <section ref={cardsSectionRef} className="bg-[#fff5e9] px-6 md:px-16 pb-20 md:pb-28">
-                <div className="max-w-5xl mx-auto flex flex-col gap-6">
+                <div key={page} className="max-w-5xl mx-auto flex flex-col gap-6 animate-page-enter">
                     {currentMembers.map(({ img, name, role, about, info }) => (
                         <div
                             key={name}
@@ -194,34 +221,49 @@ function Team() {
 
                 {/* ══ PAGINATION ══ */}
                 {totalPages > 1 && (
-                    <div className="max-w-5xl mx-auto flex items-center justify-center gap-3 mt-10">
-                        <button
-                            onClick={() => goToPage(page - 1)}
-                            disabled={page === 0}
-                            className="w-10 h-10 rounded-full border border-[#3f0008]/20 bg-white flex items-center justify-center text-[#3f0008] hover:bg-[#3f0008] hover:text-[#ffdfc0] transition-all duration-200 disabled:opacity-20 disabled:cursor-not-allowed"
-                            aria-label="Предишна страница"
-                        >
-                            &#8592;
-                        </button>
-                        {Array.from({ length: totalPages }, (_, i) => (
+                    <nav aria-label="Страници с преподаватели" className="max-w-5xl mx-auto mt-10 flex flex-col items-center gap-4">
+                        <div className="flex items-center justify-center gap-2 flex-wrap">
                             <button
-                                key={i}
-                                onClick={() => goToPage(i)}
-                                className={`w-10 h-10 rounded-full border text-[14px] transition-all duration-200 ${page === i ? 'bg-[#3f0008] text-[#ffdfc0] border-[#3f0008]' : 'bg-white text-[#3f0008] border-[#3f0008]/20 hover:bg-[#3f0008]/10'}`}
-                                aria-label={`Страница ${i + 1}`}
+                                onClick={() => goToPage(page - 1)}
+                                disabled={page === 1}
+                                className={navBtn}
+                                aria-label="Предишна страница"
                             >
-                                {i + 1}
+                                <span aria-hidden="true">&#8592;</span>
+                                <span className="hidden sm:inline">Назад</span>
                             </button>
-                        ))}
-                        <button
-                            onClick={() => goToPage(page + 1)}
-                            disabled={page === totalPages - 1}
-                            className="w-10 h-10 rounded-full border border-[#3f0008]/20 bg-white flex items-center justify-center text-[#3f0008] hover:bg-[#3f0008] hover:text-[#ffdfc0] transition-all duration-200 disabled:opacity-20 disabled:cursor-not-allowed"
-                            aria-label="Следваща страница"
-                        >
-                            &#8594;
-                        </button>
-                    </div>
+
+                            {getPageItems(page, totalPages).map((item, i) =>
+                                item === '…' ? (
+                                    <span key={`gap-${i}`} aria-hidden="true" className="w-6 text-center text-[#3f0008]/40">…</span>
+                                ) : (
+                                    <button
+                                        key={item}
+                                        onClick={() => goToPage(item)}
+                                        aria-label={`Страница ${item}`}
+                                        aria-current={page === item ? 'page' : undefined}
+                                        className={`w-10 h-10 rounded-full border text-[14px] transition-all duration-200 ${page === item ? 'bg-[#3f0008] text-[#ffdfc0] border-[#3f0008]' : 'bg-white text-[#3f0008] border-[#3f0008]/20 hover:bg-[#3f0008]/10'}`}
+                                    >
+                                        {item}
+                                    </button>
+                                )
+                            )}
+
+                            <button
+                                onClick={() => goToPage(page + 1)}
+                                disabled={page === totalPages}
+                                className={navBtn}
+                                aria-label="Следваща страница"
+                            >
+                                <span className="hidden sm:inline">Напред</span>
+                                <span aria-hidden="true">&#8594;</span>
+                            </button>
+                        </div>
+
+                        <p className="text-[12px] text-[#3f0008]/50" aria-live="polite">
+                            Показани {firstIndex + 1}–{firstIndex + currentMembers.length} от {members.length} преподаватели
+                        </p>
+                    </nav>
                 )}
             </section>
 
