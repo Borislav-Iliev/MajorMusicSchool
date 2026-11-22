@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const navLink =
-    'relative pb-[3px] text-[12px] uppercase tracking-[1.5px] text-[#ffdfc0] no-underline ' +
+    'relative pb-[3px] text-[15px] text-[#ffdfc0] no-underline ' +
     'after:absolute after:bottom-0 after:left-1/2 after:right-1/2 after:h-px after:bg-[#ffdfc0] ' +
     'after:transition-all after:duration-300 hover:after:left-0 hover:after:right-0'
 
@@ -24,7 +24,7 @@ function Navbar({ transparent = false }) {
                 <nav className={`flex items-center justify-between px-6 md:px-16 py-5 border-b ${transparent ? 'border-white/12' : 'border-[#ffdfc0]/10'}`}>
                     <Link to="/" className="flex flex-col leading-tight items-center no-underline">
                         <span className="font-display text-4xl font-bold tracking-[4px] text-[#ffdfc0]">MAJOR</span>
-                        <span className="font-display text-[13px] font-medium tracking-[3px] text-[#ffdfc0]/80 uppercase">Music School</span>
+                        <span className="font-display text-[12px] font-medium tracking-[3px] text-[#ffdfc0]/80">Music School</span>
                     </Link>
                     <div className="hidden md:flex items-center gap-7">
                         {navItems.map(({ label, href }) => (

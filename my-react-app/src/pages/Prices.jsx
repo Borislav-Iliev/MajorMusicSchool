@@ -3,6 +3,7 @@ import { FaMusic, FaUsers, FaCheck } from 'react-icons/fa'
 import { GiGClef } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import Seo from '../components/Seo'
 import Footer from '../components/Footer'
 const pricesHeroImg = 'https://res.cloudinary.com/s4o4wqaq/image/upload/v1788891553/PricesBackground.png'
 import prices from '../data/prices.json'
@@ -17,6 +18,7 @@ function Prices() {
 
     return (
         <div className="overflow-x-hidden">
+            <Seo title="Цени" description="Цени на индивидуални и групови уроци по музика в Major Music School, Пловдив. Прозрачни цени и абонаменти." />
 
             <Navbar />
 

@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import Seo from '../components/Seo'
 import Footer from '../components/Footer'
+
 const CLOUDINARY = 'https://res.cloudinary.com/s4o4wqaq/image/upload'
 const heroImg = `${CLOUDINARY}/v1788891554/MEET_THE_FOUNDERS.jpg`
 const contentImg = `${CLOUDINARY}/v1788891549/AboutUsLeft.png`
@@ -9,6 +11,7 @@ const team1Img = `${CLOUDINARY}/v1788891548/IMG_2418.jpg`
 function AboutUs() {
     return (
         <div className="overflow-x-hidden">
+            <Seo title="За нас" description="Научете повече за Major Music School в Пловдив – нашата история, философия и подход към музикалното обучение." />
 
             <Navbar />
 

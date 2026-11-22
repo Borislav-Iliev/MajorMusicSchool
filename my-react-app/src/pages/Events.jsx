@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa'
 import Navbar from '../components/Navbar'
+import Seo from '../components/Seo'
 import Footer from '../components/Footer'
 const CLOUDINARY = 'https://res.cloudinary.com/s4o4wqaq/image/upload'
 const event1Img = `${CLOUDINARY}/v1788891550/Event1.png`
@@ -53,6 +54,7 @@ const events = [
 function Events() {
     return (
         <div className="overflow-x-hidden">
+            <Seo title="Събития" description="Концерти, рецитали и събития на Major Music School в Пловдив." />
 
             <Navbar />
 

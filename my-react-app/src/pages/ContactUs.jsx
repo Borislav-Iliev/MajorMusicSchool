@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import { FaInstagram, FaFacebookF, FaTiktok, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 import Navbar from '../components/Navbar'
+import Seo from '../components/Seo'
 import Footer from '../components/Footer'
 
 const SERVICE_ID = 'service_waopbve'
@@ -31,6 +32,7 @@ function ContactUs() {
 
     return (
         <div className="overflow-x-hidden">
+            <Seo title="Контакти" description="Свържете се с Major Music School – ул. Захари Стоянов №69, Пловдив. Телефон, имейл и форма за запитване за пробен урок." />
 
             <Navbar />
 

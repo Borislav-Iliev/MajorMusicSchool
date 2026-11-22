@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { FaInstagram, FaFacebookF, FaTiktok } from 'react-icons/fa'
 import Navbar from '../components/Navbar'
+import Seo from '../components/Seo'
 import Footer from '../components/Footer'
 
 const CLOUDINARY = 'https://res.cloudinary.com/s4o4wqaq/image/upload'
@@ -138,6 +139,7 @@ function Team() {
 
     return (
         <div className="overflow-x-hidden">
+            <Seo title="Екип" description="Запознайте се с преподавателите в Major Music School – опитни музиканти и педагози в Пловдив." />
 
             <Navbar />
 
